@@ -1,68 +1,42 @@
-# SEED 🌱
+# SEED
 
-**Stochastic Effusivity-based Evolution of Diffusion**
-
----
-
-## 🔬 Overview
-
-SEED is a stochastic particle-based framework for simulating diffusion in heterogeneous media with discontinuous material properties.
-
-The method introduces a **physically consistent, parameter-free interface condition based on effusivity**, enabling accurate modeling of transport across sharp material interfaces.
-
-This repository accompanies the scientific publication:
-
-> *A stochastic particle-based method for diffusion in heterogeneous media with effusivity-driven interface conditions*
+Stochastic Effusivity-based Evolution of Diffusion
 
 ---
 
-## ✨ Key Features
+## Overview
 
-* 🔁 Random-walk particle diffusion
-* ⚡ Effusivity-driven interface condition
-* 🧱 Handles discontinuous heterogeneous media
-* 📊 Validated against analytical solutions
-* 🚀 Linear scaling with number of particles (O(N))
-* 🧵 Parallelizable with multiprocessing
-* 🐍 Fully implemented in Python (NumPy)
+SEED is a stochastic particle-based framework for the simulation of diffusion processes in heterogeneous media with discontinuous material properties.
+
+The method relies on a probabilistic treatment of interface conditions derived from effusivity, ensuring consistency with both transient behavior and equilibrium partitioning without requiring additional tuning parameters.
 
 ---
 
-## 🧠 Method Summary
+## Features
 
-Particle motion follows a Brownian random walk:
-
-$$
-\Delta x \sim \mathcal{N}(0, 2D \Delta t)
-$$
-
-At interfaces, transmission probability is:
-
-$$
-P_{i \to j} = \frac{E_j}{E_i + E_j}
-$$
-
-where (E = \rho C_p \sqrt{D}) is the **effusivity**.
-
-This ensures:
-
-* correct transient behavior
-* detailed balance
-* equilibrium partitioning
+* Stochastic random-walk formulation of diffusion
+* Effusivity-based interface treatment
+* Applicability to heterogeneous media with sharp discontinuities
+* Consistency with analytical solutions
+* Linear computational complexity with respect to particle number
+* Parallel implementation using multiprocessing
+* Python implementation based on NumPy
 
 ---
 
-## 📦 Installation
+## Installation
+
+Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/your-username/seed-diffusion.git
+git clone https://github.com/YOUR_USERNAME/seed-diffusion.git
 cd seed-diffusion
 pip install -r requirements.txt
 ```
 
 ---
 
-## ▶️ Usage
+## Usage
 
 ### 1D interface validation
 
@@ -70,113 +44,51 @@ pip install -r requirements.txt
 python src/unsteady_1D.py
 ```
 
-Monte Carlo vs analytical solution comparison
-(see: )
-
----
-
-### 3D heterogeneous diffusion
+### Effective diffusivity in heterogeneous media
 
 ```bash
-python src/3D_Dvar.py
+python src/diffusion_3D.py
 ```
 
-* Generates porous medium
-* Computes effective diffusivity
-  (see: )
-
----
-
-### Performance scaling
+### Performance analysis
 
 ```bash
 python src/scaling.py
 ```
 
-* Particle scaling
-* Parallel scaling
-  (see: )
-
 ---
 
-## 📊 Results
+## Requirements
 
-* ✔ Excellent agreement with analytical solutions
-* ✔ Correct equilibrium partitioning
-* ✔ Accurate effective diffusivity in porous media
-* ✔ Linear computational scaling
-
----
-
-## 🧪 Requirements
-
-* Python ≥ 3.8
+* Python 3.x
 * NumPy
 * Matplotlib
 
-```bash
-pip install numpy matplotlib
-```
+---
+
+## Repository structure
+
+* `src/` : core implementation
+* `examples/` : example scripts
+* `docs/` : associated publication
 
 ---
 
-## 📁 Structure
+## License
 
-```
-src/        → core simulation code  
-examples/   → usage scripts  
-figures/    → output plots  
-docs/       → paper  
-```
+GNU General Public License v3.0
 
 ---
 
-## 📜 License
+## Citation
 
-GNU GPL
+If you use this code, please cite:
 
----
-
-## 📬 Contact
-
-Gérald Debenest
-IMFT – Toulouse INP
-📧 [gerald.debenest@toulouse-inp.fr](mailto:gerald.debenest@toulouse-inp.fr)
+Debenest, G., Horgue, P., Guibert, R.
+*A stochastic particle-based method for diffusion in heterogeneous media with effusivity-driven interface conditions*
 
 ---
 
-## 📖 Citation
+## Contact
 
-If you use SEED, please cite:
-
-```
-Debenest et al.,
-A stochastic particle-based method for diffusion in heterogeneous media with effusivity-driven interface conditions
-```
-
----
-
-## 🌱 Why SEED?
-
-SEED provides a **physics-driven alternative** to classical methods:
-
-* ❌ No artificial flux matching
-
-* ❌ No numerical tuning
-
-* ✅ Interface behavior emerges naturally
-
-* ✅ Fully consistent with diffusion theory
-
-* ✅ Robust for complex heterogeneous systems
-
----
-
-## 🚀 Future Work
-
-* Advection–diffusion coupling
-* Reactive transport
-* GPU acceleration
-* Large-scale 3D simulations
-
----
+[gerald.debenest@toulouse-inp.fr](mailto:gerald.debenest@toulouse-inp.fr)
