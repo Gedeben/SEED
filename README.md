@@ -41,19 +41,19 @@ pip install -r requirements.txt
 ### 1D interface validation
 
 ```bash
-python src/unsteady_1D.py
+python unsteady_1D.py
 ```
 
 ### Effective diffusivity in heterogeneous media
 
 ```bash
-python src/diffusion_3D.py
+python diffusion_3D.py
 ```
 
 ### Performance analysis
 
 ```bash
-python src/scaling.py
+python scaling.py
 ```
 
 ---
@@ -68,9 +68,9 @@ python src/scaling.py
 
 ## Repository structure
 
-* `src/` : core implementation
-* `examples/` : example scripts
-* `docs/` : associated publication
+* *.py files : core implementation
+
+* `docs/` : softwarex_seed.pdf
 
 ---
 
